@@ -6,21 +6,31 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AboutComponent } from './pages/about/about.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { MainComponent } from './admin/main/main.component';
+import { AuthGuard } from './guards/auth.guard';
+import { PostComponent } from './pages/post/post.component';
+import { CommentsComponent } from './pages/comments/comments.component';
+
 
 const routes: Routes =[
   {
-    path:"home",component:HomeComponent
-  },
-  {
-    path:"about",component:AboutComponent
+    path:"home",component:HomeComponent,title:"Home-Page", data:{pageRouteName: "Home-page"}
   },{
-    path:"dashboard",component:DashboardComponent
+    path: 'admin', component: MainComponent, title: "Main", canActivate: [AuthGuard]
   },{
-    path:"login",component:LoginComponent
+    path:"about",component:AboutComponent,title:"About"
   },{
-    path:'',pathMatch:'full',redirectTo:'/home'
+    path:"dashboard",component:DashboardComponent,title:"dashboard"
   },{
-    path:'***',component:NotfoundComponent
+    path:"login",component:LoginComponent,title:"login"
+  },{
+    path:"posts",component:PostComponent,title:"Posts"
+  },{
+    path:"comments/:id",component: CommentsComponent,title:"Comments"
+  },{
+    path:'',pathMatch:'full',redirectTo:'/home', data:{pageRouteName: "Home-page"}
+  },{
+    path:'***',component:NotfoundComponent, title :"Not found"
   }
 ];
 

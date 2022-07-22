@@ -1,0 +1,27 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="blog-posts" *ngFor="let comment of comment">
+            <article class="post post-large">
+
+                <div class="post-date">
+                    <span class="day">20</span>
+                    <span class="month">June</span>
+                </div>
+                <div class="post-content">
+
+                    <h2><a href="">{{comment.email}}</a></h2>
+                    <p>{{comment.body}}</p>
+
+                    <div class="post-meta">
+                        <span><i class="fa fa-user"></i> By <a href="#">{{comment.name}}</a> </span>
+                        <span><i class="fa fa-tag"></i> <a href="#">post id: "{{comment.id}}"</a>, <a href="#">comment id: "{{comment.postId}}"</a> </span>
+                        <a href="blog-post.html" class="btn btn-xs btn-primary pull-right" [routerLink]="['/posts']">Return...</a>
+                    </div>
+
+                </div>
+            </article>
+
+        </div>
+    </div>
+</div>

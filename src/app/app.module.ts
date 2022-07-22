@@ -11,6 +11,11 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { HeaderComponent } from './partial/header/header.component';
 import { FooterComponent } from './partial/footer/footer.component';
 import { MenuComponent } from './partial/menu/menu.component';
+import { MainComponent } from './admin/main/main.component';
+import { PostComponent } from './pages/post/post.component';
+import { CommentsComponent } from './pages/comments/comments.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,14 +27,16 @@ import { MenuComponent } from './partial/menu/menu.component';
     NotfoundComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    MainComponent,
+    PostComponent,
+    CommentsComponent,
   ],
   //falta un componente en el array aparece como no existente
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
